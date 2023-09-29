@@ -2,4 +2,4 @@
 
 Share your code aesthetically
 
-![example](/example.png)
+![example](/public/example.png)
