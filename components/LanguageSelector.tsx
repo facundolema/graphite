@@ -1,6 +1,6 @@
 import data from "@/components/data.json";
 
-export default function LanguageSelector({ setLanguage }) {
+export default function LanguageSelector({ setLanguage } : { setLanguage: Function } ) {
   const options = data.map((language) => {
     return (
       <option key={language.id} value={language.id}>
