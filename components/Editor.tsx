@@ -14,17 +14,18 @@ export default function Editor({
   url: string;
   language: string;
 }) {
-  function setEndOfContenteditable(contentEditableElement) {
+  function setEndOfContenteditable(contentEditableElement: HTMLElement) {
     let range = document.createRange();
     range.selectNodeContents(contentEditableElement);
     range.collapse(false);
     let selection = window.getSelection();
+    if (!selection) return;
     selection.removeAllRanges();
     selection.addRange(range);
   }
 
   function handleInput() {
-    const target = document.querySelector("[contentEditable]");
+    const target = document.querySelector("[contentEditable]") as HTMLElement;
     const post = hljs.highlight(target.innerText, {
       language: language,
     }).value;

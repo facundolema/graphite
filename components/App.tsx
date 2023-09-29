@@ -12,7 +12,7 @@ export default function App() {
   const [language, setLanguage] = useState("javascript");
 
   function handleDownload() {
-    const capture = document.querySelector("#capture");
+    const capture = document.querySelector("#capture") as HTMLElement;
     html2canvas(capture, { useCORS: true }).then((canvas) => {
       document.querySelector("canvas")?.remove();
       document.querySelector("#canvasContainer")!.appendChild(canvas);
